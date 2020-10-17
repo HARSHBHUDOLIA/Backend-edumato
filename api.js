@@ -66,7 +66,7 @@ app.get('/orders',(req,res) => {
 //RestaurentDetai+
 app.get('/restaurantdetails/:id',(req,res) => {
     var query = {_id:req.params.id}
-    db.collection('restaurent').find(query).toArray((err,result) => {
+    db.collection('restaurant').find(query).toArray((err,result) => {
         res.send(result)
     })
 })
