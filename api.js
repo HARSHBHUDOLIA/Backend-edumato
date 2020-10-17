@@ -36,7 +36,7 @@ app.get("/cuisine",(req,res)=>{
 }
 )
 
-app.get('/restaurents',(req,res) => {
+app.get('/restaurants',(req,res) => {
     var condition = {};
     if(req.query.city && req.query.mealtype){
         condition = {city:req.query.city,"type.mealtype":req.query.mealtype}
@@ -49,7 +49,7 @@ app.get('/restaurents',(req,res) => {
     else{
         condition={}
     }
-    db.collection('restaurent').find(condition).toArray((err,result) => {
+    db.collection('restaurant').find(condition).toArray((err,result) => {
         if(err) throw err;
         res.send(result)
     })
