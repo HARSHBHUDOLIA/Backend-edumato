@@ -1,6 +1,6 @@
 const express=require('express')//Here I imported the express package
 var app=express()//Here I created an object of const express = require('express');
-var port=9000//Here I created the port number where my projects will run
+var port=process.env.PORT||9000//Here I created the port number where my projects will run
 var mongodb=require('mongodb')//Here I imported the mongodb package
 var bodyParser=require('body-parser')//Here I imported the body-parser package
 var MongoClient=mongodb.MongoClient//MongoClient is a method inside mongo, basically it is used to create a client that will use mongdb for our project.
