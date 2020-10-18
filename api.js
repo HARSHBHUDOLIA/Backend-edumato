@@ -95,7 +95,7 @@ app.post('/placeorder',(req,res) => {
     console.log(req.body);
     db.collection('orders').insert(req.body,(err,result) => {
         if(err) throw err;
-        res.send('posted')
+        res.send('result')
     })
 })
 
