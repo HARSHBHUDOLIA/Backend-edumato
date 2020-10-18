@@ -92,13 +92,14 @@ app.get('/restaurantList/:mealtype',(req,res) => {
 
 //PlaceOrder
 app.post('/placeorder',(req,res) => {
-    console.log(req.body);
-    db.collection('orders').insert(req.body,(err,result) => {
-        if(err) throw err;
-        res.send('result')
+    db.collection('orders').insertOne(req.body,(err,result) => {
+        if(err){
+            throw err
+        }else{
+            res.send('Data Added')
+        }
     })
-})
-
+});
 //order
 app.get('/orders',(req,res) => {
     db.collection('orders').find({}).toArray((err,result) => {
